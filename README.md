@@ -7,6 +7,8 @@ I modified the Hagiwo code to add an FM/Pitchbend input seperate from the CV so 
 
 I also added the modifications from clarionut on Look Mum No Computer to add the NeoPixel LED for the wave selection display and PWM for the square wave.
 
+https://www.youtube.com/watch?v=fpNUdnT3NE0
+
 - Specifications
 
 - Dual Wavetable VCDCO with 24 waveforms, AM, FM, etc
