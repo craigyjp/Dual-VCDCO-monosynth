@@ -49,7 +49,7 @@ void setup()
  digitalWrite(DAC2,HIGH);
 
  SPI.begin();
-
+ Serial.begin(9600);
  MIDI.begin(MIDI_CHANNEL_OMNI);
 
  // Set initial pitch bend voltage to 0.5V (mid point).  With Gain = 1X, this is 1023
@@ -83,7 +83,8 @@ void loop()
     switch (type) {
       case midi::NoteOn: 
       case midi::NoteOff:
-        noteMsg = MIDI.getData1() - 21; // A0 = 21, Top Note = 108
+        noteMsg = MIDI.getData1() -24; // A0 = 21, Top Note = 108
+
         channel = MIDI.getChannel();
         
         if ((noteMsg < 0) || (noteMsg > 87)) break; // Only 88 notes of keyboard are supported
@@ -222,14 +223,15 @@ void commandLastNote()
 // DAC output will be (4095/87) = 47.069 mV per note, and 564.9655 mV per octive
 // Note that DAC output will need to be amplified by 1.77X for the standard 1V/octave 
 
-#define NOTE_SF 47.069f // This value can be tuned if CV output isn't exactly 1V/octave
+//#define NOTE_SF 47.069f // This value can be tuned if CV output isn't exactly 1V/octave
+#define NOTE_SF 48.017f // This value can be tuned if CV output isn't exactly 1V/octave
 
 void commandNote(int noteMsg) {
   digitalWrite(GATE,HIGH);
   digitalWrite(TRIG,HIGH);
   trigTimer = millis();
   
-  unsigned int mV = (unsigned int) ((float) (noteMsg -3) * NOTE_SF + 0.5); 
+  unsigned int mV = (unsigned int) ((float) (noteMsg) * NOTE_SF + 0.5); 
   setVoltage(DAC1, 0, 1, mV);  // DAC1, channel 0, gain = 2X
 }
 
