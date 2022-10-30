@@ -26,7 +26,7 @@ https://www.youtube.com/watch?v=fpNUdnT3NE0
 
 # Contributors
 
-- Elkyam MIDI to CV converter, slightly modified for different CV outputs
+- Elkyam MIDI to CV converter, slightly modified for different CV outputs and channel changes
 
 https://github.com/elkayem/midi2cv
 
