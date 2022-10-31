@@ -17,6 +17,7 @@ https://www.youtube.com/watch?v=fpNUdnT3NE0
 - AS3372E pole mixing filter with 16 configurations
 - Envelope inversion for filter
 - Electric Druid LFO with 16 waveforms
+- LFO Clock input
 - Electric Druid EnvGen8c envelopes for filter and amp.
 - Electric Druid Noise 2 for Pink & White Noise
 - Elkyam MIDI to CV converter for MIDI compatability
